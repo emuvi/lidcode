@@ -1,0 +1,57 @@
+{
+  "name": "lidcode",
+  "icon": "favicon.ico",
+  "displayName": "LidCode",
+  "description": "LidCode is a command extension for VSCode that generates unique identification codes inside a workspace.",
+  "version": "0.1.0",
+  "publisher": "emuvi-pce",
+  "repository": "https://github.com/emuvi/lidcode",
+  "keywords": [
+    "Log",
+    "Info",
+    "Debug",
+    "Error",
+    "Messages"
+  ],
+  "author": "Éverton M. Vieira",
+  "license": "LGPL-3.0-only",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onCommand:lidcode.newLidCode"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lidcode.newLidCode",
+        "title": "New LidCode"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "@vscode/test-electron": "^0.6.2",
+    "eslint": "^7.32.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.1",
+    "typescript": "^4.4.3"
+  }
+}
